@@ -9,7 +9,7 @@
 <h1 align="Center">Pig Game Implementation Using JavaScript</h1>
 
 <p align="center">
-  <img src="./Resource/Game-Demo.gif" alt="Pig Game Demo Video" width="80%">
+  <img src="./Resource/Game-Demo.webm" alt="Pig Game Demo Video" width="80%">
 </p>
 
 # Pig Game Project Introduction
