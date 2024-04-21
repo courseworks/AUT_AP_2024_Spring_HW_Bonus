@@ -1,0 +1,187 @@
+* {
+  box-sizing: border-box;
+}
+
+/* Base styles for overall layout aesthetics */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto Mono";
+  background-color: #69cbc0;
+  color: #333;
+  line-height: 1.6;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+}
+
+/* Player information section styling */
+.player-section {
+  display: flex;
+  justify-content: space-around;
+  width: 90%;
+  max-width: 1000px;
+  margin: 30px auto 0;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+}
+
+/* Player card styling */
+.player {
+  flex: 1;
+  padding: 30px;
+  margin: 20px;
+  background-color: #e2e2e2;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Styling for player names and scores */
+.player-name,
+.player-score {
+  text-align: center;
+  font-weight: bold;
+  margin: 20px 0;
+  font-size: 1.5em;
+}
+
+/* Current score styling */
+.current-score-container {
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.label-current-score {
+  font-size: 1em;
+}
+
+.amount-current-score {
+  font-size: 2em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .player-section,
+  .game-controls {
+    flex-direction: column;
+    width: 95%;
+  }
+}
+
+/* Active player styling with animation */
+.is-active {
+  background-color: #009180;
+  transform: scale(1.05);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  animation: pulse 1.5s infinite;
+  opacity: 1;
+  transition-delay: 0.1s;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.25);
+  }
+}
+
+.player:hover {
+  background-color: #f0f0f0;
+  transition-delay: 0s;
+}
+
+.is-active:hover {
+  background-color: #69cbc0;
+  transition-delay: 0s;
+}
+.player:not(.is-active) {
+  opacity: 0.6;
+}
+
+/* Controls container and button styling */
+.game-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 300px;
+  margin: 30px auto;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.dice-image {
+  width: 80px;
+  height: 80px;
+  transition: transform 0.3s ease-in-out;
+  margin-bottom: 20px;
+}
+
+.dice-image:hover {
+  transform: rotate(360deg);
+}
+
+.btn {
+  width: 100%;
+  padding: 15px 20px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease,
+    transform 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16);
+  text-align: center;
+}
+
+.btn:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transform: translateY(1px);
+}
+
+/* Specific button color definitions */
+.btn-new-game {
+  background-color: #12b886;
+}
+
+.btn-roll-dice {
+  background-color: #228be6;
+}
+
+.btn-hold-score {
+  background-color: #e64980;
+}

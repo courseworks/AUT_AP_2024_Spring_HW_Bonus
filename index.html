@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Linking Google Fonts for typography -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Linking external CSS file -->
+    <link rel="stylesheet" href="style.css" />
+    <title>Pig Game</title>
+  </head>
+  <body>
+    <main>
+      <!-- Section for displaying player details -->
+      <section class="player-section">
+        <div class="player player0 is-active">
+          <h2 class="player-name" id="player0-name">Player 1</h2>
+          <p class="player-score" id="player0-score">43</p>
+          <div class="current-score-container">
+            <p class="label-current-score">Current</p>
+            <p class="amount-current-score" id="player0-current-score">0</p>
+          </div>
+        </div>
+        <div class="player player1">
+          <h2 class="player-name" id="player1-name">Player 2</h2>
+          <p class="player-score" id="player1-score">24</p>
+          <div class="current-score-container">
+            <p class="label-current-score">Current</p>
+            <p class="amount-current-score" id="player1-current-score">0</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section for game interaction controls -->
+      <section class="game-controls">
+        <img src="dice-5.png" alt="Playing dice" class="dice-image" />
+        <button class="btn btn-new-game">🔄 New game</button>
+        <button class="btn btn-roll-dice">🎲 Roll dice</button>
+        <button class="btn btn-hold-score">📥 Hold</button>
+      </section>
+    </main>
+    <!-- Linking JavaScript for interactivity -->
+    <script src="script.js"></script>
+  </body>
+</html>
