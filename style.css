@@ -58,7 +58,7 @@ main {
 }
 
 /* Current score styling */
-.current-score-container {
+.current-score-section {
   text-align: center;
   background-color: #fff;
   border: 1px solid #ccc;
@@ -68,11 +68,11 @@ main {
   transition: box-shadow 0.3s ease-in-out;
 }
 
-.label-current-score {
+.current-score-label {
   font-size: 1em;
 }
 
-.amount-current-score {
+.current-score-amount {
   font-size: 2em;
 }
 
@@ -86,7 +86,7 @@ main {
 }
 
 /* Active player styling with animation */
-.is-active {
+.active-player {
   background-color: #009180;
   transform: scale(1.05);
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
@@ -112,11 +112,11 @@ main {
   transition-delay: 0s;
 }
 
-.is-active:hover {
+.active-player:hover {
   background-color: #69cbc0;
   transition-delay: 0s;
 }
-.player:not(.is-active) {
+.player:not(.active-player) {
   opacity: 0.6;
 }
 

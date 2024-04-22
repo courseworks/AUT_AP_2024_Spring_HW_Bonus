@@ -9,12 +9,12 @@
 <h1 align="Center">Pig Game Implementation Using JavaScript</h1>
 
 <p align="center">
-  <img src="./Resource/Game-Demo.webm" alt="Pig Game Demo Video" width="80%">
+  <img src="./Resource/Game-Demo.gif" alt="Pig Game Demo Video" width="80%">
 </p>
 
 # Pig Game Project Introduction
 
-Welcome to your JavaScript project on implementing the Pig Game! This document outlines the core objectives of the project, providing you with essential information and guidelines to help you successfully complete the game's functionality using JavaScript. Before diving into the development aspects, let's understand the game itself.
+Welcome to your **BONUS** project on implementing the Pig Game! This document outlines the core objectives of the project, providing you with essential information and guidelines to help you successfully complete the game's functionality using JavaScript. Before diving into the development aspects, let's understand the game itself.
 
 ## Understanding the Pig Game
 
@@ -25,7 +25,7 @@ Welcome to your JavaScript project on implementing the Pig Game! This document o
 
 # Pig Game JavaScript Implementation Guide
 
-Welcome to the JavaScript implementation phase of the Pig Game! This document outlines the specific tasks and objectives you must achieve to make the provided HTML and CSS functional. Follow these steps carefully to ensure your game behaves as expected.
+Welcome to the JavaScript implementation phase of the Pig Game! This section outlines the specific tasks and objectives you must achieve to make the provided HTML and CSS functional. Follow these steps carefully to ensure your game behaves as expected.
 
 ## Objective Overview
 
@@ -37,8 +37,8 @@ Your main goal is to develop the JavaScript functionality that allows two player
 
 - **Objective**: Set up the initial game state when the page loads or when the "New Game" button is pressed.
 - **Tasks**:
-  - Reset all scores to 0 and set the initial player as active.
-  - Ensure the dice image is hidden.
+  - Reset all scores to 0 and set the initial player (First Player) as active.
+  - Ensure the dice image is hidden, at the beginning of the game. (You can add a "**hidden**" class to its classList)
   - Update the UI to reflect these initial states using DOM manipulation.
 
 ### Step 2: Making the Dice Roll Functional
@@ -50,7 +50,7 @@ Your main goal is to develop the JavaScript functionality that allows two player
   - If the dice roll is 1:
     - Reset the current score of the active player to 0.
     - Switch to the other player.
-  - If the dice roll is more than 1:
+  - If the dice roll is anything other than 1:
     - Add the roll value to the active player's current score.
     - Update the current score display in the UI.
 
@@ -70,7 +70,7 @@ Your main goal is to develop the JavaScript functionality that allows two player
   - Check the player's total score after the "hold" action to see if it reaches or exceeds 100.
   - If a player wins:
     - Display a celebration icon (🎉) in place of their current score.
-    - Change the background color of the page to **#69CBC0**.
+    - Change the background color of the page to **#E64980**.
     - Disable the "Roll Dice" and "Hold" buttons to prevent further play.
     - Allow only the "New Game" button to function to restart the game.
 
@@ -134,13 +134,13 @@ let playerName = "John";
 const maxScore = 100;
 
 playerName = "Doe"; // This is allowed
-maxScore = 200;     // This will throw an error because const values cannot be reassigned
+maxScore = 200; // This will throw an error because const values cannot be reassigned
 ```
 
 **Best Practices**
 
 - Prefer `const` by default; only use `let` if you know the variable's value will change.
-- Avoid `var` to reduce scope-related issues.
+- **Avoid** `var` to reduce scope-related issues.
 
 ## Section 2: Functions in JavaScript
 
@@ -175,7 +175,7 @@ function myFunction() {
 Alternatively, you can define a function using a function expression, which allows you to create anonymous functions (functions without a name).
 
 ```javascript
-const myFunction = function() {
+const myFunction = function () {
   // Code to execute
 };
 ```
@@ -207,7 +207,7 @@ function greet(name = "Guest") {
 }
 
 console.log(greet("Alice")); // Output: Hello, Alice!
-console.log(greet());        // Output: Hello, Guest!
+console.log(greet()); // Output: Hello, Guest!
 ```
 
 ### 2.4 Return Statements
@@ -277,9 +277,9 @@ Imagine checking if a player has enough points to win a game:
 let score = 95;
 
 if (score >= 100) {
-  console.log('You won!');
+  console.log("You won!");
 } else {
-  console.log('Keep trying, you need more points to win!');
+  console.log("Keep trying, you need more points to win!");
 }
 ```
 
@@ -302,9 +302,9 @@ let score = 120;
 let timeLeft = 5;
 
 if (score >= 100 && timeLeft > 0) {
-  console.log('You won!');
+  console.log("You won!");
 } else {
-  console.log('Game over!');
+  console.log("Game over!");
 }
 ```
 
@@ -319,17 +319,17 @@ The `switch` statement is used for performing different actions based on differe
 **Syntax and Example**
 
 ```javascript
-let fruit = 'apple';
+let fruit = "apple";
 
 switch (fruit) {
-  case 'apple':
-    console.log('Apples are $0.65 per pound.');
+  case "apple":
+    console.log("Apples are $0.65 per pound.");
     break;
-  case 'banana':
-    console.log('Bananas are $0.35 per pound.');
+  case "banana":
+    console.log("Bananas are $0.35 per pound.");
     break;
   default:
-    console.log('Sorry, we are out of ' + fruit + '.');
+    console.log("Sorry, we are out of " + fruit + ".");
 }
 ```
 
@@ -352,10 +352,12 @@ DOM selection is the process of selecting elements from the HTML document using 
 **Methods of Selection**
 
 1. **By ID**:
+
    - `getElementById()`: Selects an element by its ID. It's a fast and efficient way to access elements if you know their ID.
    - **Example**: `let playerScore = document.getElementById('score--1');`
 
 2. **By Class Name**:
+
    - `getElementsByClassName()`: Selects all elements that have a specified class name. This method returns a live HTMLCollection.
    - **Example**: `let buttons = document.getElementsByClassName('btn');`
 
@@ -379,16 +381,16 @@ The `classList` property provides methods to add, remove, and toggle CSS classes
 **Examples**
 
 ```javascript
-let player = document.querySelector('.player--active');
+let player = document.querySelector(".player--active");
 
 // Adding an active class
-player.classList.add('active');
+player.classList.add("active");
 
 // Removing an active class
-player.classList.remove('active');
+player.classList.remove("active");
 
 // Toggling a class
-player.classList.toggle('active');
+player.classList.toggle("active");
 ```
 
 ### 4.3 Setting Text and Attributes
@@ -408,11 +410,11 @@ player.classList.toggle('active');
 
 ```javascript
 // Setting the source of an image
-let dice = document.querySelector('.dice');
-dice.src = 'dice-3.png';
+let dice = document.querySelector(".dice");
+dice.src = "dice-3.png";
 
 // Changing attributes
-dice.setAttribute('alt', 'Dice three');
+dice.setAttribute("alt", "Dice three");
 ```
 
 ### 4.4 Best Practices
@@ -455,9 +457,9 @@ element.addEventListener(event, function, useCapture);
 **Example**
 
 ```javascript
-const button = document.querySelector('.btn--roll');
-button.addEventListener('click', function() {
-  console.log('Button was clicked!');
+const button = document.querySelector(".btn--roll");
+button.addEventListener("click", function () {
+  console.log("Button was clicked!");
 });
 ```
 
@@ -480,7 +482,7 @@ function rollDice() {
 **Using the Event Handler**
 
 ```javascript
-button.addEventListener('click', rollDice);
+button.addEventListener("click", rollDice);
 ```
 
 ### 5.4 Event Object
@@ -492,7 +494,7 @@ The event object is a parameter that is automatically passed to event handlers b
 **Using the Event Object**
 
 ```javascript
-button.addEventListener('click', function(event) {
+button.addEventListener("click", function (event) {
   console.log(event.type); // Logs 'click'
 });
 ```
@@ -510,7 +512,7 @@ element.removeEventListener(event, handler);
 **Example**
 
 ```javascript
-button.removeEventListener('click', rollDice);
+button.removeEventListener("click", rollDice);
 ```
 
 ### 5.6 Best Practices
@@ -518,7 +520,6 @@ button.removeEventListener('click', rollDice);
 - **Don’t Overuse Inline Event Handlers**: Inline event handlers (e.g., `<button onclick="alert('Clicked!')">Click me!</button>`) are harder to maintain and debug compared to `addEventListener`.
 - **Use Named Functions for Clarity**: Named functions make your code more readable and easier to debug than anonymous functions in your event listeners.
 - **Debounce and Throttle**: Use debouncing and throttling techniques to limit the rate at which a function is executed, particularly useful in handling events like resizing or scrolling.
-
 
 ## Section 6: Debugging JavaScript Techniques
 
@@ -535,7 +536,7 @@ Logging is a debugging method that outputs messages or variables to the console,
 - **Purpose**: Primarily used for general debugging and information logging.
 - **Example**:
   ```javascript
-  console.log('This is a log message.');
+  console.log("This is a log message.");
   ```
 
 **Using `console.error()`**
@@ -543,7 +544,7 @@ Logging is a debugging method that outputs messages or variables to the console,
 - **Purpose**: Specifically used for logging error messages, making them easily distinguishable in the console.
 - **Example**:
   ```javascript
-  console.error('This is an error message.');
+  console.error("This is an error message.");
   ```
 
 ### 6.2 CSS Manipulation via JavaScript
@@ -557,7 +558,7 @@ Changing styles through JavaScript allows for interactive and responsive design 
 - **Syntax**: `element.style.property = 'value';`
 - **Example**:
   ```javascript
-  document.body.style.backgroundColor = '#ff0000'; // Changes background color to red
+  document.body.style.backgroundColor = "#ff0000"; // Changes background color to red
   ```
 
 **Adding and Removing Background Images**
@@ -568,7 +569,7 @@ Changing styles through JavaScript allows for interactive and responsive design 
   ```
 - **Removing a Background Image**:
   ```javascript
-  document.body.style.backgroundImage = 'none';
+  document.body.style.backgroundImage = "none";
   ```
 
 ### 6.3 Toggle Using Modulo Operator
@@ -605,6 +606,7 @@ Global variables are accessible from anywhere in your JavaScript code. While the
 - **Naming Convention**: Use clear, descriptive names to avoid conflicts and enhance readability.
 
 # Last Word
+
 For your assignment, **please replace only the JavaScript** code with your own implementation based on the guidelines provided. Once you have completed your version, submit your results on your course page for evaluation. Make sure your implementation adheres to the project requirements and functions as expected. Good luck!
 
 <p align="center">
