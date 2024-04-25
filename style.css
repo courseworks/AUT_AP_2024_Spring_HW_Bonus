@@ -185,3 +185,8 @@ main {
 .btn-hold-score {
   background-color: #e64980;
 }
+
+.hidden {
+  display: none;
+  visibility: hidden;
+}
