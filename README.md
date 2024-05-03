@@ -613,4 +613,4 @@ For your assignment, **please replace only the JavaScript** code with your own i
   <img src="./Resource/Just-Use-A-Library.png" alt="Why code it yourself?" style="width: 60%;">
 </p>
 
-**Best Regards, Hamidi**
+**Best Regards, [Hamidi](https://github.com/smhamidi)**
